@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0.36
+    container_name: mysql_data_base
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: Tawan123
+    ports:
+      - 3306:3306
+
+  app:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/TRADE_WEB
+    ports:
+      - 8000:8000
+    image: app:django
+    container_name: django_container

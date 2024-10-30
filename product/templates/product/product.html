@@ -1,0 +1,23 @@
+{% extends 'app_general/components/base.html' %}
+{% load static %}
+{% block site_title%}{{ product.title }}{% endblock %}
+{% block content %}
+<section class="content-section content-section-single">
+    <div class="content-container">
+        {% if product is not None %}
+            <div class="grid">
+                <img src="{% static product.image_relative_url %}" alt="">
+                <h3>"{{ product.title }}</h3>
+                <p>{{ product.distant }} km</p>
+
+                <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nunc luctus finibus augue</p>
+            </div>
+
+    </div>
+</section>
+
+        {% else %}
+            <p>ไม่พบสินค้านี้</p>
+        {% endif %}
+{% endblock %}
+

@@ -1,0 +1,32 @@
+{% extends 'app_general/components/base.html' %}
+{% load static %}
+{% block site_title%}HomePage {% endblock %}
+{% block content %}
+<section class="home-landing-section">
+    <h1 class="home-landing-text">ยินดีตอนรับจ้า</h1>
+    <h6 class="home-landing-text">เริ่มต้นการแลกเปลี่ยน</h6>
+    <p class="home-landing-text">
+        <a class="button" href="{% url 'products' %}">ดูสินค้าทั้งหมด</a>
+        <a class="button button-primary" href="{% url 'login' %}">เข้าสู่ระบบ</a>
+    </p>
+</section>
+<section class="content-section">
+    <div class="content-container">
+        <h4 class="content-title text-center">อธิบายเพิ่มเติม</h4>
+        <div class="grid">
+            <div>
+                <img class="image-block" src="{% static 'app_general/poiuy.jpg' %}">
+                <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nunc luctus finibus augue</p>
+            </div>
+            <div>
+                <img class="image-block" src="{% static 'app_general/3.jpg' %}">
+                <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nunc luctus finibus augue</p>
+            </div>
+            <div>
+                <img class="image-block" src="{% static 'app_general/2.jpg' %}">
+                <p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nunc luctus finibus augue</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

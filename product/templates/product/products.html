@@ -1,0 +1,23 @@
+{% extends 'app_general/components/base.html' %}
+{% load static %}
+{% block site_title%}สินค้าทั้งหมด{% endblock %}
+{% block content %}
+<section class="content-section content-section-single">
+    <div class="content-container">
+        <div>
+            <h2 class="content-title">สินค้าทั้งหมด</h2>
+            <div class="grid grid-3">
+                {% for product in products %}
+                <div style="background-color: rgb(173, 182, 181);">
+                    <div>
+                        <img class="image-block" src="{% static product.image_relative_url %}">
+                    </div>
+                    <h3><a href="{% url 'product' product.id %}">{{ product.title }}</a></h3>
+                    <p>{{ product.distant }} km</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
